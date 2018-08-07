@@ -124,7 +124,7 @@ docker run -e "project.name=<id> template.name=projects/<id>/deidentifyTemplates
 
 ### GKE deployment 
 
-It uses Istio 1.0 with GKE 10+
+It uses Istio 1.0 with GKE 10+. Please update dlp-reidentify-service.yaml file for the image and env related properties before deploying.
 
 ```
 export PROJECT_ID=<id>
@@ -159,6 +159,8 @@ export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
 curl -o /dev/null -s -w "%{http_code}\n" http://${GATEWAY_URL}/jpa/v1/customers
 
 ```
+
+
 
 ### Load Testing
 
