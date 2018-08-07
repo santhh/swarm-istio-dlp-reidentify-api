@@ -1,0 +1,14 @@
+apiVersion: config.istio.io/v1alpha2
+kind: RouteRule
+metadata:
+  name: dlp-reidentify-service-rules
+spec:
+  destination:
+    name: dlp-reidentify-service
+  match:
+    request:
+      headers:
+        uri:
+          prefix: /api/customers
+  rewrite:
+    uri: /
